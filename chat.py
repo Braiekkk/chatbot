@@ -4,7 +4,7 @@ import json
 import re
 from difflib import get_close_matches
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Configuration de l'API
 genai.configure(api_key="AIzaSyBuhVu3rNq-KiWTnCOYWPMAV7RpfbIrhGg")
@@ -58,5 +58,5 @@ def talk():
     response_text = analyser_message(message)
     return jsonify({"response": response_text})
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
